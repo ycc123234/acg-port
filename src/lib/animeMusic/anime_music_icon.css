@@ -1,0 +1,29 @@
+
+@font-face {font-family: "iconfont";
+  src: url('anime_music_icon.ttf');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "pixel";
+  src: url("../../assets/font/pixel-china.ttf");
+}
+@font-face {
+  font-family: "awesome";
+  src: url("../../assets/font/fontawesome-webfont.ttf");
+}
+
+.icon-play:before { content: "\e6e1"; }
+
+.icon-pause:before { content: "\e70d"; }
+
+.icon-next:before { content: "\e674"; }
+
+.icon-pcclient:before{content: "\e685"}
