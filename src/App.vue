@@ -1,29 +1,42 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div>
+      <div id="bg-image"></div>
+      <div class="bg-image-pattern"></div>
     </div>
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
-<style lang="scss">
+<style >
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+
+#bg-image {
+  background: url("https://random.52ecy.cn/randbg.php") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -9999;
+  filter: brightness(80%);
+}
+.bg-image-pattern {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -998;
+  background: url("./assets/img/bg-fixed.png") repeat;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  /* overflow: hidden; */
 }
 </style>
