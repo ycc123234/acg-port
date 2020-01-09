@@ -9,6 +9,7 @@
 </template>
 
 <style >
+@import "./lib/mySakura/sakura.scss";
 #app {
 }
 

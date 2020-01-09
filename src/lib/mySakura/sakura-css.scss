@@ -1,0 +1,35 @@
+@import './lib/anime_music_icon/demo.css';
+.w-1 {
+  width: 153px;
+}
+.w-2 {
+  width: 318px;
+}
+.w-4 {
+  width: 648px;
+}
+.w-8 {
+  width: 1308px;
+}
+.h-1 {
+  height: 153px;
+}
+.h-2 {
+  height: 318px;
+}
+.parent::before {
+  content: "";
+  display: table;
+}
+.clearFloat:after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}
+.clearFloat {
+  zoom: 1;
+}
+
+

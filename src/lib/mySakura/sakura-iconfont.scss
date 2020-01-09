@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "pixel";
+  src: url("./lib/pixel-china.ttf");
+}
+
+@font-face {
+  font-family: "awesome";
+  src: url("./lib/fontawesome-webfont.ttf");
+}
+
+@font-face {
+  font-family: "iconfont";
+  src: url("./lib/anime_music_icon/anime_music_icon.ttf");
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*播放*/
+.icon-play:before {
+  
+  content: "\e6e1";
+}
+/*暂停*
+.icon-pause:before {
+  content: "\e70d";
+}
+/*下一首*/
+.icon-next:before {
+  content: "\e674";
+}
+
+.icon-pcclient:before {
+  content: "\e605";
+}

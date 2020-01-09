@@ -118,10 +118,9 @@
     </table>
   </div>
 </template>
-<script src="../../lib/animeMusic/anime-music.js" ></script>
 
 <script>
-import { animeMusic, secondToDate } from "../../lib/animeMusic/anime-music.js";
+// import { animeMusic, secondToDate } from "../../lib/animeMusic/anime-music.js";
 export default {
   data() {
     return {
