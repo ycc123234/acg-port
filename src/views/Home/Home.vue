@@ -76,17 +76,7 @@
           <div class="box w-2 h-1">
             <div class="content">
               <div>
-                <div class="player">
-                  <div class="logo"></div>
-                  <div class="control iconfont icon-pause" @click="play" v-if="audio.paused"></div>
-                  <div class="control iconfont icon-play" @click="play" v-else></div>
-                  <div class="next iconfont icon-next"></div>
-                  <div class="time">00:00/00:00</div>
-                  <div class="progress">
-                    <div class="now"></div>
-                  </div>
-                  <div class="name"></div>
-                </div>
+                <music-player></music-player>
               </div>
             </div>
           </div>
@@ -99,7 +89,9 @@
 
         <td colspan="2">
           <div class="box w-2 h-1">
-            <div class="content"></div>
+            <div class="content">
+
+            </div>
           </div>
         </td>
         <td>
@@ -118,45 +110,23 @@
 </template>
 
 <script>
-// import { animeMusic, secondToDate } from "../../lib/animeMusic/anime-music.js";
+import music from '../../components/MusicPlayer/MusicPlayer.vue'
 export default {
   data() {
     return {
-      bgUrl: "",
-      audio:{
-        paused:false
-      }
     };
   },
-  created() {},
-  mounted() {},
-  methods: {
-    createAudio() {
-      // let url='http://v2.api.dmzj.com/article/recommend/header.json';
-      let url =
-        "https://searl-32-1258067737.cos.ap-shanghai.myqcloud.com/musicInfo/url/Really%20Slow%20Motion%20-%20Suns%20And%20Stars.mp3";
-      let audio = document.createElement("AUDIO");
-      audio.src = url;
-      this.myAudio = audio;
-      this.createAudio = function() {};
-    },
-    play() {
-      this.createAudio();
-      let myAudio = this.myAudio;
-
-      if (myAudio.paused) {
-        myAudio.play();
-        this.audio.paused=true;
-      } else {
-        myAudio.pause();
-        this.audio.paused=false;
-      }
-
-      this.myAudio = myAudio;
-    }
+  components:{
+    "music-player":music
   },
+  created() {
+    
+  },
+  mounted() { },
+
+  methods: {},
   props: {
-    msg: String
+    
   }
 };
 </script>

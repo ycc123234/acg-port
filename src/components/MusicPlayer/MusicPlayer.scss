@@ -1,0 +1,27 @@
+@import "./lib/anime_music_icon/anime.css";
+@font-face {
+  font-family: "iconfont";
+  src: url("./lib/anime_music_icon/anime_music_icon.ttf");
+}
+
+.anime {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*播放*/
+.ani-play:before {
+  content: "\e6e1";
+}
+/*暂停*/
+.ani-pause:before {
+  content: "\e70d";
+}
+
+/*下一首*/
+.ani-next:before {
+  content: "\e674";
+}

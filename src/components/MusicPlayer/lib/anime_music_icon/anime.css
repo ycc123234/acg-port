@@ -36,11 +36,11 @@
 
         .player {
             font-family: 微软雅黑;
-            width: 316px;
-            height: 150px;
+            width: 318px;
+            height: 153px;
             /* background-color: rgba(0, 0, 0, 0.3); */
             position: absolute;
-            left: 1px;
+            left: 0px;
             bottom: 0px;
             background-size: 100% 100%;
             background-position: center center;
