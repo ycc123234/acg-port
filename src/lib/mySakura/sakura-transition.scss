@@ -1,0 +1,6 @@
+// 字体渐隐渐显效果
+.hitokoto {
+    transform:rotateX(0deg)rotateY(0deg);
+    transition:transform 1s,opacity 1s;
+    transition-timing-function:ease;
+   }

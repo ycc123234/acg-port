@@ -36,8 +36,8 @@
 
         .player {
             font-family: 微软雅黑;
-            width: 318px;
-            height: 153px;
+            width: 100%;
+            height: 100%;
             /* background-color: rgba(0, 0, 0, 0.3); */
             position: absolute;
             left: 0px;

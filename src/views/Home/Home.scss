@@ -11,13 +11,12 @@
 }
 .cell-style {
   font-family: pixel;
-  font-weight: bold;
 }
 .cell-style > div:first-child {
   display: table-cell;
   vertical-align: middle;
 }
-.cell-style > div:last-child {
+.cell-style .name {
   position: absolute;
   left: 0;
   bottom: 0;

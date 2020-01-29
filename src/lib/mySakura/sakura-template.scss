@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+$total-width:1420px;
+$total-height:660px;
+$width-unit:$total-width/8;
+$height-unit:165px;
+$border:2*4px;
+$border-space:2*2px;
+
+.w-1 {
+  width: $width-unit - $border-space - $border;
+} 
+.w-2 {
+  width: $width-unit*2 - $border-space - $border;
+}
+.w-4 {
+  width: $width-unit*4 - $border-space - $border;
+}
+.w-8 {
+  width: $width-unit*8 - $border-space - $border;
+}
+.h-1 {
+  height: $height-unit - $border-space - $border;
+}
+.h-2 {
+  height: $height-unit*2 - $border-space - $border;
+}
+#skr-grid-template{
+    width: $total-width;
+    height: $total-height;
+  }
