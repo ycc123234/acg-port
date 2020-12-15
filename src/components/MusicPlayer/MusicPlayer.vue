@@ -16,7 +16,7 @@
 
 <script>
 import mu from "../../utils/musicUtil";
-import {audioAtTime} from "../../utils/filters";
+import { audioAtTime } from "../../utils/filters";
 export default {
   name: "MusicPlayer",
   data() {
@@ -40,6 +40,12 @@ export default {
     this.getSongList();
   },
   mounted() {},
+  beforeDestroy() {
+    console.log("beforeDestroy");
+    this.discreateAudio();
+  },
+  destroyed(){
+  },
   methods: Object.assign({}, mu)
 };
 </script>

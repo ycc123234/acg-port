@@ -1,5 +1,13 @@
 
 export default {
+    //销毁播放器
+    discreateAudio(){
+        if(this.myAudio){
+
+            this.myAudio.pause();
+            this.myAudio=null;
+        }
+    },
     //Arr转List
     arrayAtYield: function* (arr) {
         var yieldList = arr;
@@ -140,12 +148,22 @@ export default {
     //暂停/播放歌曲
     _pauseAudio(myAudio) {
         if (myAudio.paused) {
-            console.log("播放");
-            myAudio.play();
+            this._play(myAudio);
         } else {
-            console.log("暂停");
-            myAudio.pause();
+            this._pause(myAudio);
         }
         return myAudio;
+    },
+    //暂停
+    _pause(myAudio){
+        console.log("暂停");
+        myAudio.pause();
+    },
+    //播放
+    _play(myAudio){
+        console.log("播放");
+        myAudio.play();
     }
+    
+
 }

@@ -1,5 +1,8 @@
 <template style="overflow:hidden;">
-  <div class="app-index">
+  <div class="app-index aa">
+    <div>
+     <bg-img/>
+    </div>
     <table id="skr-grid-template">
       <tr>
         <td colspan="8">
@@ -29,7 +32,7 @@
           </div>
         </td>
         <td>
-          <div class="box w-1 h-1">
+          <div class="box w-1 h-1" @click="goBlog">
             <div class="content cell-style">
               <div>
                 <div class="icon fas icon-pcclient" style="display: block;font-size: 46px;"></div>
@@ -101,9 +104,7 @@
         </td>
         <td>
           <div class="box w-1 h-1">
-            <div class="content">
-              
-            </div>
+            <div class="content"></div>
           </div>
         </td>
       </tr>
@@ -113,19 +114,30 @@
 
 <script>
 import music from "../../components/MusicPlayer/MusicPlayer.vue";
+import bgimg from "../../components/BgImg.vue";
 export default {
+  components: {
+    "music-player": music,
+    "bg-img":bgimg
+  },
   data() {
     return {};
   },
-  components: {
-    "music-player": music
-  },
+
   created() {},
   mounted() {
     this.getInfo();
   },
 
   methods: {
+    goBlog() {
+      console.log("111");
+      // this.$router.push("blog");
+       let routeUrl = this.$router.resolve({
+          path: "/blog",
+     });
+     window.open(routeUrl .href, '_blank');
+    },
     getInfo() {
       this.$api.animeMotto().then(result => {
         if (typeof str == "string") {
@@ -141,12 +153,9 @@ export default {
         }, 30000);
       });
     },
-    clearInput(){
-      let elem =document.getElementsByClassName('search')[0];
-      elem.value=''
-
-      
-
+    clearInput() {
+      let elem = document.getElementsByClassName("search")[0];
+      elem.value = "";
     }
   },
 
@@ -156,5 +165,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-@import url("./Home.scss");
+
+
+@import "./Home.scss";
 </style>

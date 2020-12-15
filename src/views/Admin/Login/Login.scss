@@ -1,0 +1,57 @@
+.app-admin-login {
+  height: 100vh;
+  background: url(~@/assets/img/cms-bg.jpg) no-repeat ;
+  background-size:cover;
+  .clearfix:before,.clearfix:after{
+	content : "111" ;
+	display : table;
+	clear:both;
+	zoom:1;
+}
+  .login {
+    width: 280px;
+    height: 400px;
+    background: #fff;
+    border-radius: 16px;
+      margin: calc((100vh - 400px) / 2) auto;
+
+    >div{
+        margin: 30px  auto;
+        width: 240px;
+        > .login-input {
+            border-bottom: 1px solid #DCDFE6;
+          font-family: Raleway, sans-serif;
+          font-size: 13px;
+          letter-spacing: 1px;
+          font-weight: bold;
+          color: #555;
+          label{
+
+              cursor: pointer;
+          }
+          > div {
+            > div {
+              margin-bottom: 10px;
+            }
+          }
+    
+          .login-btn {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+           
+            
+          }
+        }
+        >#loginInfo{
+            color: #555;
+            font-weight: bold;
+            text-align: center;
+            margin:20px auto ;
+            font-size: 12px;
+
+        }
+    }
+    
+}
+}
