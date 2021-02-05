@@ -8,7 +8,9 @@
         <!-- //nav -->
         <div id="o-head">
           <div class="icon">
-            <img src="https://www.wikimoe.com/content/uploadfile/tpl_options//logo.png" />
+            <img
+              src="https://www.wikimoe.com/content/uploadfile/tpl_options//logo.png"
+            />
           </div>
           <div class="category">
             <ul class="bar">
@@ -47,44 +49,18 @@
                 <div>最新内容</div>
                 <div class="more">更多+</div>
               </div>
-              <div class="news-content">
-                <div class="item">
-                  <div class="item-category">通知</div>
-                  <div class="item-title">程序正在开发中哒！！思密哒！！！</div>
-                  <div class="item-createtime">20.08.06</div>
-                </div>
-                <div class="item">
-                  <div class="item-category">通知</div>
-                  <div class="item-title">程序正在开发中哒！！思密哒！！！</div>
-                  <div class="item-createtime">20.08.06</div>
-                </div>
-                <div class="item">
-                  <div class="item-category">通知</div>
-                  <div class="item-title">程序正在开发中哒！！思密哒！！！</div>
-                  <div class="item-createtime">20.08.06</div>
-                </div>
-                <div class="item">
-                  <div class="item-category">通知</div>
-                  <div class="item-title">程序正在开发中哒！！思密哒！！！</div>
-                  <div class="item-createtime">20.08.06</div>
-                </div>
-                <div class="item">
-                  <div class="item-category">通知</div>
-                  <div class="item-title">程序正在开发中哒！！思密哒！！！</div>
-                  <div class="item-createtime">20.08.06</div>
-                </div>
-                <div class="item">
-                  <div class="item-category">通知</div>
-                  <div class="item-title">程序正在开发中哒！！思密哒！！！</div>
-                  <div class="item-createtime">20.08.06</div>
-                </div>
-                <div class="item">
-                  <div class="item-category">通知</div>
-                  <div class="item-title">程序正在开发中哒！！思密哒！！！</div>
-                  <div class="item-createtime">20.08.06</div>
+              <div class="news-content" v-for="(item, i) in newsList" :key="i">
+                <div class="item" :data-id="item.id">
+                  <div class='item-category' v-if="item.category == 1">通知</div>
+                  <div class='item-category' v-else-if="item.category == 2">活动</div>
+                  <div class='item-category' v-else-if="item.category == 3">资料</div>
+                  <div class='item-category' v-else-if="item.category == 4">热点</div>
+                  <div class="item-title">{{ item.title }}</div>
+                  <div class="item-createtime">
+                    {{ item.intime | dateFilter }}
+                  </div>
                 </div>
               </div>
-              
             </div>
           </div>
           <!-- //aside -->
@@ -148,15 +124,35 @@
 import bgimg from "../../components/BgImg.vue";
 export default {
   components: {
-    "bg-img": bgimg
+    "bg-img": bgimg,
   },
   data() {
-    return {};
+    return {
+      newsList: [
+        {
+          id: -1,
+          category: "error",
+          title: "数据获取失败",
+          intime: new Date().getTime(),
+        },
+      ],
+      pages: {
+        pageSize: 7,
+        currentPage: 1,
+        totalPage: 10,
+        totalData: 0,
+        status: 0,
+      },
+    };
   },
-  created() {},
-  mounted() {console.log('123456')},
+  created() {
+    this.getNewsList();
+  },
+  mounted() {
+    console.log("123456");
+  },
   methods: {
-    getFocus: function(elem) {
+    getFocus: function (elem) {
       elem.currentTarget.getElementsByClassName(
         "input-btn"
       )[0].style.backgroundPositionY = "-40px";
@@ -165,7 +161,7 @@ export default {
         "input-textarea"
       )[0].style.color = "#EA2B73";
     },
-    lostFocus: function(elem) {
+    lostFocus: function (elem) {
       elem.currentTarget.getElementsByClassName(
         "input-btn"
       )[0].style.backgroundPositionY = "0px";
@@ -173,8 +169,18 @@ export default {
       elem.currentTarget.getElementsByClassName(
         "input-textarea"
       )[0].style.color = "#39c5bb";
-    }
-  }
+    },
+    getNewsList() {
+      // newsList数据获取
+      console.log("getNewsList");
+      this.$axios
+        .get("/cms/artical/list", { params: this.pages })
+        .then((result) => {
+          console.log(result);
+          this.newsList = result.data.data.list;
+        });
+    },
+  },
 };
 </script>
 

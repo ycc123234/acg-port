@@ -14,10 +14,18 @@
             <el-input v-model="form.title" autocomplete="off"></el-input>
           </el-form-item>
           <el-form-item label="作者" :label-width="formLabelWidth">
-            <el-input v-model="form.author" disabled autocomplete="off"></el-input>
+            <el-input
+              v-model="form.author"
+              disabled
+              autocomplete="off"
+            ></el-input>
           </el-form-item>
           <el-form-item label="发表时间" :label-width="formLabelWidth">
-            <el-input :value="form.intime | dateFilter" disabled autocomplete="off"></el-input>
+            <el-input
+              :value="form.intime | dateFilter"
+              disabled
+              autocomplete="off"
+            ></el-input>
           </el-form-item>
 
           <el-form-item :label-width="formLabelWidth" label="文章标签">
@@ -25,7 +33,7 @@
               v-model="tabs"
               @change="changeTabs"
               :options="options"
-              :props="{ multiple: true, checkStrictly: true,}"
+              :props="{ multiple: true, checkStrictly: true }"
               clearable
               :show-all-levels="false"
             ></el-cascader>
@@ -52,11 +60,9 @@
         </el-form>
         <div class="demo-drawer__footer">
           <el-button @click="handleClose">取 消</el-button>
-          <el-button
-            type="primary"
-            @click="sendForm"
-            :loading="loading"
-          >{{ loading ? '提交中 ...' : '确 定' }}</el-button>
+          <el-button type="primary" @click="sendForm" :loading="loading">{{
+            loading ? "提交中 ..." : "确 定"
+          }}</el-button>
         </div>
       </div>
     </el-drawer>
@@ -72,22 +78,31 @@
         </el-col>
         <el-col :span="2">
           <div class="grid-content bg-purple">
-            <el-button type="info" style="width:100%;" disabled plain>筛选</el-button>
+            <el-button type="info" style="width: 100%" disabled plain
+              >筛选</el-button
+            >
           </div>
         </el-col>
         <el-col :span="3">
           <div class="grid-content bg-purple">
             <el-button
               type="primary"
-              style="width:100%;"
+              style="width: 100%"
               icon="el-icon-edit"
               @click="handleAdd"
-            >添加文章</el-button>
+              >添加文章</el-button
+            >
           </div>
         </el-col>
         <el-col :span="3">
           <div class="grid-content bg-purple">
-            <el-button type="danger" style="width:100%;" icon="el-icon-delete" disabled>批量删除</el-button>
+            <el-button
+              type="danger"
+              style="width: 100%"
+              icon="el-icon-delete"
+              disabled
+              >批量删除</el-button
+            >
           </div>
         </el-col>
       </el-row>
@@ -95,7 +110,12 @@
     <!-- <el-divider style="margin:0 !important;"></el-divider> -->
     <div>
       <el-table
-        :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
+        :data="
+          tableData.filter(
+            (data) =>
+              !search || data.name.toLowerCase().includes(search.toLowerCase())
+          )
+        "
         style="width: 100%"
       >
         <el-table-column type="selection" width="55"></el-table-column>
@@ -105,44 +125,90 @@
 
         <el-table-column label="标签" prop="labels">
           <template slot-scope="scope">
-            <el-tag v-for="(item,i) in scope.row.labels" :key="i" style="margin:0 2px;">{{item}}</el-tag>
+            <el-tag
+              v-for="(item, i) in scope.row.labels"
+              :key="i"
+              style="margin: 0 2px"
+              >{{ item }}</el-tag
+            >
           </template>
         </el-table-column>
         <el-table-column label="发布时间">
-          <template slot-scope="scope">{{scope.row.intime | dateFilter}}</template>
+          <template slot-scope="scope">{{
+            scope.row.intime | dateFilter
+          }}</template>
         </el-table-column>
         <el-table-column width="80px" label="类型">
           <template slot-scope="scope">
-            <span v-if="scope.row.category==1">通知</span>
-            <span v-else-if="scope.row.category==2">活动</span>
-            <span v-else-if="scope.row.category==3">资料</span>
-            <span v-else-if="scope.row.category==4">热点</span>
+            <span v-if="scope.row.category == 1">通知</span>
+            <span v-else-if="scope.row.category == 2">活动</span>
+            <span v-else-if="scope.row.category == 3">资料</span>
+            <span v-else-if="scope.row.category == 4">热点</span>
           </template>
         </el-table-column>
-        <el-table-column width="80px" label="浏览量" prop="visits"></el-table-column>
+        <el-table-column
+          width="80px"
+          label="浏览量"
+          prop="visits"
+        ></el-table-column>
         <el-table-column width="80px" label="状态">
           <template slot-scope="scope">
-            <el-tag v-if="scope.row.status==1" :type="'danger'" effect="plain">删除</el-tag>
-            <el-tag v-else-if="scope.row.status==2" :type="'info'" effect="plain">隐藏</el-tag>
-            <el-tag v-else-if="scope.row.status==3" :type="''" effect="plain">审核</el-tag>
-            <el-tag v-else-if="scope.row.status==4" :type="'success'" effect="plain">可见</el-tag>
-            <el-tag v-else-if="scope.row.status==5" :type="'warning'" effect="plain">匿名</el-tag>
-            <el-tag v-else-if="scope.row.status==6" :type="'danger'" effect="plain">仅自己</el-tag>
+            <el-tag v-if="scope.row.status == 1" :type="'danger'" effect="plain"
+              >删除</el-tag
+            >
+            <el-tag
+              v-else-if="scope.row.status == 2"
+              :type="'info'"
+              effect="plain"
+              >隐藏</el-tag
+            >
+            <el-tag v-else-if="scope.row.status == 3" :type="''" effect="plain"
+              >审核</el-tag
+            >
+            <el-tag
+              v-else-if="scope.row.status == 4"
+              :type="'success'"
+              effect="plain"
+              >可见</el-tag
+            >
+            <el-tag
+              v-else-if="scope.row.status == 5"
+              :type="'warning'"
+              effect="plain"
+              >匿名</el-tag
+            >
+            <el-tag
+              v-else-if="scope.row.status == 6"
+              :type="'danger'"
+              effect="plain"
+              >仅自己</el-tag
+            >
           </template>
         </el-table-column>
 
         <el-table-column align="right" width="144px">
           <template slot="header" slot-scope="{}">
-            <el-input v-model="search" size="mini" placeholder="输入关键字搜索" />
+            <el-input
+              v-model="search"
+              size="mini"
+              placeholder="输入关键字搜索"
+            />
           </template>
           <template slot-scope="scope">
-            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">修改</el-button>
-            <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
+              >修改</el-button
+            >
+            <el-button
+              size="mini"
+              type="danger"
+              @click="handleDelete(scope.$index, scope.row)"
+              >删除</el-button
+            >
           </template>
         </el-table-column>
       </el-table>
     </div>
-    <div style="margin-top:30px;">
+    <div style="margin-top: 30px">
       <el-pagination
         background
         hide-on-single-page
@@ -170,14 +236,14 @@ export default {
           children: [
             {
               value: 15,
-              label: "我的世界"
+              label: "我的世界",
             },
             {
               value: 16,
-              label: "泰拉瑞亚"
-            }
-          ]
-        }
+              label: "泰拉瑞亚",
+            },
+          ],
+        },
       ],
       tableData: [
         {
@@ -188,8 +254,8 @@ export default {
           category: "通知",
           visits: 1002,
           status: 1,
-          labels: ["原创", "动画/小说/游戏"]
-        }
+          labels: ["原创", "动画/小说/游戏"],
+        },
       ],
       form: {
         title: "",
@@ -198,14 +264,14 @@ export default {
         tabs: [],
         category: null,
         content: "",
-        status: null
+        status: null,
       },
       pages: {
         pageSize: 20,
         currentPage: 1,
         totalPage: 10,
         totalData: 0,
-        status: 0
+        status: 0,
       },
       tabs: [],
       rights: "",
@@ -216,7 +282,7 @@ export default {
       dialog: false,
       loading: false,
       formLabelWidth: "80px",
-      timer: null
+      timer: null,
     };
   },
 
@@ -238,7 +304,7 @@ export default {
         tabs: [],
         category: null,
         content: "",
-        status: 4
+        status: 4,
       };
       this.form = form;
       this.dialog = true;
@@ -257,7 +323,7 @@ export default {
         intime: this.getTime(),
         category: row.category,
         content: row.content,
-        status: row.status
+        status: row.status,
       };
       this.form = form;
       this.dialog = true;
@@ -265,21 +331,18 @@ export default {
     },
     handleDelete(index, row) {
       console.log(index, row);
-       this.$confirm("确定要删除吗？")
-        .then(_ => {
+      this.$confirm("确定要删除吗？")
+        .then((_) => {
           console.log("sendForm", row.id);
-          
-            const params = this.$qs.stringify({id:row.id}, { indices: false });
-            this.$axios.post("/cms/artical/delete", params).then(result => {
-              this.$message(result.data.msg);
-              if (result.data.code == 2201) {
-                
-              }
-            });
-          
-          
+
+          const params = this.$qs.stringify({ id: row.id }, { indices: false });
+          this.$axios.post("/cms/artical/delete", params).then((result) => {
+            this.$message(result.data.msg);
+            if (result.data.code == 2201) {
+            }
+          });
         })
-        .catch(_ => {});
+        .catch((_) => {});
     },
     handleClose(done) {
       this.loading = false;
@@ -301,11 +364,11 @@ export default {
     },
     sendForm() {
       this.$confirm("确定要提交表单吗？")
-        .then(_ => {
+        .then((_) => {
           console.log("sendForm", this.drawerMode);
           if (this.drawerMode == 0) {
             const params = this.$qs.stringify(this.form, { indices: false });
-            this.$axios.post("/cms/artical/add", params).then(result => {
+            this.$axios.post("/cms/artical/add", params).then((result) => {
               this.$message(result.data.msg);
               if (result.data.code == 2201) {
                 this.loading = false;
@@ -314,7 +377,7 @@ export default {
             });
           } else if (this.drawerMode == 1) {
             const params = this.$qs.stringify(this.form, { indices: false });
-            this.$axios.post("/cms/artical/update", params).then(result => {
+            this.$axios.post("/cms/artical/update", params).then((result) => {
               this.$message(result.data.msg);
               if (result.data.code == 2201) {
                 this.loading = false;
@@ -324,7 +387,7 @@ export default {
           }
           this.loading = true;
         })
-        .catch(_ => {});
+        .catch((_) => {});
     },
     handleCurrentChange(curPage) {
       console.log(curPage);
@@ -332,19 +395,18 @@ export default {
       // const params = this.$qs.stringify(this.pages);
       this.$axios
         .get("/cms/artical/list", { params: this.pages })
-        .then(result => {
+        .then((result) => {
           console.log(result);
           this.pages.totalData = result.data.data.count;
-          
+
           this.tableData = result.data.data.list;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style  lang='sass' scoped>
-
 @import './artical.scss'
 </style>

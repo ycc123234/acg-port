@@ -4,6 +4,8 @@ import Router from 'vue-router'
 
 import Home from './views/Home/Home.vue'
 import Blog from './views/Blog/Blog.vue'
+import NewsList from './views/Blog/NewsList/NewsList.vue'
+
 import AdminLogin from './views/Admin/Login/Login.vue'
 import Admin from './views/Admin/Admin.vue' 
 import AcgArtical from './components/ACGBLOG/article/artical.vue'
@@ -20,6 +22,11 @@ const router=new Router({
       path: '/blog',
       name: 'blog',
       component: Blog
+    },
+    {
+      path: '/blog/news',
+      name: 'news',
+      component: NewsList
     },
     {
       path: '/about',

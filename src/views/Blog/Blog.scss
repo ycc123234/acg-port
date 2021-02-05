@@ -133,129 +133,132 @@ $bar-height: 52px;
       grid-template-rows: 100px 100px 100px;
       grid-auto-rows: 100px;
       grid-template-areas:
-      "a b c"
-      "d e f"
-      "g h i";
+        "a b c"
+        "d e f"
+        "g h i";
       grid-auto-flow: column dense;
       // grid-template-columns: 63.75% 33.8%;
       // grid-column-gap: 30px;
-      >.item {
+      > .item {
         padding: 2px;
-        &.news>div{
-          $theme:#b03531;
+        &.news > div {
+          $theme: #b03531;
           border: 3px solid $theme;
-          box-shadow: 0 0 8px 0px $theme inset ,0 0 8px 0px $theme;
+          box-shadow: 0 0 8px 0px $theme inset, 0 0 8px 0px $theme;
           padding: 20px;
         }
-        &.myself>div{
-          $theme:#b4fe6e;
+        &.myself > div {
+          $theme: #b4fe6e;
           border: 3px solid $theme;
-          box-shadow: 0 0 8px 0px $theme inset ,0 0 8px 0px $theme;
+          box-shadow: 0 0 8px 0px $theme inset, 0 0 8px 0px $theme;
           // border: 3px solid #34a5ae;
           padding: 20px;
         }
-        &.item3>div{
-          $theme:#30997b;
+        &.item3 > div {
+          $theme: #30997b;
           border: 3px solid $theme;
-          box-shadow: 0 0 8px 0px $theme inset ,0 0 8px 0px $theme;
+          box-shadow: 0 0 8px 0px $theme inset, 0 0 8px 0px $theme;
           padding: 20px;
         }
-        &.item4>div{
-          $theme:#6a478f;
+        &.item4 > div {
+          $theme: #6a478f;
           border: 3px solid $theme;
-          box-shadow: 0 0 8px 0px $theme inset ,0 0 8px 0px $theme;
+          box-shadow: 0 0 8px 0px $theme inset, 0 0 8px 0px $theme;
           padding: 20px;
         }
-        &.item5>div{
+        &.item5 > div {
           $theme: #da6f2b;
           border: 3px solid $theme;
-          box-shadow: 0 0 8px 0px $theme inset ,0 0 8px 0px $theme;
+          box-shadow: 0 0 8px 0px $theme inset, 0 0 8px 0px $theme;
           padding: 20px;
         }
-        &.item6>div{
-          $theme: #3248A1;
+        &.item6 > div {
+          $theme: #3248a1;
           border: 3px solid $theme;
-          box-shadow: 0 0 8px 0px $theme inset ,0 0 8px 0px $theme;
+          box-shadow: 0 0 8px 0px $theme inset, 0 0 8px 0px $theme;
           padding: 20px;
         }
-        >div{
+        > div {
           box-sizing: border-box;
           height: 100%;
           width: 100%;
           background: $mainTheme-body;
           border-radius: 18px;
-          
+
           //font-style
           color: #fff;
           font-size: 18px;
           letter-spacing: 8px;
-          
+
           font-family: pixel;
           line-height: 24px;
-
         }
       }
       .news {
-        
         // grid-area: i;
         grid-area: 1/1/5/9;
-        &-title{
-          >div{
+        &-title {
+          > div {
             display: inline-block;
-          &:first-child{
-            text-shadow: #b03531 0px 0px 8px;
-
-          }
+            &:first-child {
+              text-shadow: #b03531 0px 0px 8px;
+            }
           }
 
           width: 100%;
-          height:50px;
-          .more{
-            float:right;
+          height: 50px;
+          .more {
+            float: right;
+            cursor: pointer;
+            &:hover {
+              color: #b03531;
+              text-shadow: #b03531 0px 0px 8px;
+            }
           }
         }
-        &-title::after{
-          content:'';
+        &-title::after {
+          content: "";
           display: inline-block;
           width: 100%;
           height: 3px;
           background: #b03531;
           box-shadow: 0 0 8px 1px #b03531;
-
         }
-        &-content{
-          
-          .item{
-              padding: 10px 20px;            
-            >div{
+        &-content {
+          .item {
+            padding: 10px 20px;
+            cursor: pointer;
+            &:hover {
+              .item-title,
+              .item-createtime {
+                color: #b03531;
+                text-shadow: #b03531 0px 0px 8px;
+              }
+            }
+            > div {
               display: inline-block;
             }
-            &-category{
+            &-category {
               background: #ea2b73;
               width: 70px;
               text-align: center;
               text-indent: 8px;
             }
-            &-title{
-
+            &-title {
               letter-spacing: 0px;
               text-indent: 20px;
             }
-            &-createtime{
-              letter-spacing:0px;
+            &-createtime {
+              letter-spacing: 0px;
               float: right;
             }
-            
           }
         }
-       
       }
       .myself {
         grid-area: 1/9/3/13;
         text-shadow: #b4fe6e 0px 0px 8px;
         > div {
-         
-          
           .picture {
             width: 92px;
             height: 92px;
@@ -285,14 +288,11 @@ $bar-height: 52px;
       }
       .item3 {
         grid-area: 5/1/7/5;
-     
       }
       .item4 {
         grid-area: 3/9/7/13;
-      
       }
       .item5 {
-        
         grid-area: 5/5/7/9;
       }
       .item6 {
