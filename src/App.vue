@@ -16,7 +16,7 @@ export default {
         debug: !1,
         model: {
           scale: 2,
-          jsonPath: "live2dw/assets/asuna_33.model.json"
+          jsonPath: "live2dw/assets/asuna_33.model.json"//换老婆
         },
         display: {
           //大小位置什么的自己慢慢调就是了
@@ -24,14 +24,15 @@ export default {
           width: 130, //宽度
           height: 210, //高度
           hOffset: -40, //左右
-          vOffset: 0 //上下
+          vOffset: 0, //上下
+          
         },
         mobile: {
-          show: !1
+          show: true//是否盯着鼠标看
         },
         log: !1
       });
-    }, 3000);
+    }, 1000);
   },
   mounted() {
     // this.aa();

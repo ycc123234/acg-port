@@ -13,18 +13,12 @@
             />
           </div>
           <div class="category">
-            <ul class="bar">
-              <li class="item">
-                <div>首页</div>
-              </li>
-              <li class="item">
-                <div>首页1</div>
-              </li>
-              <li class="item">
-                <div>首页11</div>
-              </li>
-              <li class="item">
-                <div>首页111</div>
+            <ul class="bar"  >
+              <li class="item" v-for="(item,i) in navList" :key="i" @mouseleave="hideDrawBox(i)" @mouseenter='showDrawBox(i)'>
+                <div class="title">{{item.title}}</div>
+                <div v-show="item.show" class="draw-box">
+                    <div v-for="(item,i) in item.children" :key="i">{{item.itemTitle}}</div>
+                </div>
               </li>
             </ul>
           </div>
@@ -47,7 +41,7 @@
             <div>
               <div class="news-title">
                 <div>最新内容</div>
-                <div class="more">更多+</div>
+                <div class="more" @click="goNewsList">更多+</div>
               </div>
               <div class="news-content" v-for="(item, i) in newsList" :key="i">
                 <div class="item" :data-id="item.id">
@@ -128,10 +122,50 @@ export default {
   },
   data() {
     return {
+      navList:[
+        {
+          title:'首页',
+          show:false,
+          children:[
+            {
+              id:1,
+              itemTitle:'11'
+            },
+            {
+              id:2,
+              itemTitle:'222222222222222'
+            },
+            {
+              id:3,
+              itemTitle:'33'
+            }
+            
+          ]
+        },
+        {
+          title:'首页',
+          show:false,
+          children:[
+            {
+              id:1,
+              itemTitle:'1111111111111'
+            },
+            {
+              id:2,
+              itemTitle:'2'
+            },
+            {
+              id:3,
+              itemTitle:'33'
+            }
+            
+          ]
+        }
+      ],
       newsList: [
         {
           id: -1,
-          category: "error",
+          category: 1,
           title: "数据获取失败",
           intime: new Date().getTime(),
         },
@@ -152,6 +186,14 @@ export default {
     console.log("123456");
   },
   methods: {
+    showDrawBox:function(index){
+      this.navList[index].show=true;
+    },
+    hideDrawBox:function(index){
+      this.navList[index].show=false;
+    },
+    goNewsList:function(){
+    },
     getFocus: function (elem) {
       elem.currentTarget.getElementsByClassName(
         "input-btn"
