@@ -1,0 +1,17 @@
+$mainTheme-nav: black;      //导航栏的背景颜色
+$mainTheme-body: #00000090;//各板块的背景颜色和透明度
+$text-primary: #0079d3;
+$bar-height: 52px;
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+input {
+    height: inherit;
+    font: inherit;
+}
+input[type] {
+    padding: 0;
+}

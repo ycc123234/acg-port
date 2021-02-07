@@ -1,0 +1,128 @@
+@import '@/App.scss';
+
+#acg-nav{
+    height: $bar-height;
+}
+ 
+#o-head {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: pixel;
+    // position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $bar-height;
+    background-color: $mainTheme-nav;
+    // display: flex;
+    & > div {
+        height: 100%;
+        display: inline-block;
+    }
+    .icon {
+        float: left;
+        margin: 0 20px;
+        // background: red;
+        > img {
+            height: 100%;
+        }
+    }
+    .category {
+        > .bar {
+            list-style: none;
+            height: 100%;
+
+            > .item {
+                display: inline-block;
+                min-width: 80px;
+                position: relative;
+                height: 100%;
+
+                > div {
+                    text-align: center;
+                    line-height: $bar-height;
+                    color: #c2c4c6;
+                    font-size: 10pt;
+                }
+            }
+            .draw-box {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #363c41dd;
+                padding: 0 10px;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border: 2px solid #363636;
+                border-top: none;
+                > div {
+                }
+                > div:hover {
+                    color: #ea2b73;
+                    // text-shadow: 0 0 8px #ea2b73;
+                    font-weight: bold;
+                }
+            }
+
+            .item:hover {
+                background: #363c41;
+                .title {
+                    color: #39c5bb;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .information {
+        float: right;
+        // width: 400px;
+        .sign {
+            .signin {
+            }
+            .signup {
+            }
+        }
+        .search {
+            height: 30px;
+            margin-right: 20px;
+            background-color: #363c41;
+            margin-top: calc((#{$bar-height} - 30px) / 2);
+            border-radius: 2px;
+            transition: background-color 0.3s;
+            > input {
+                float: right;
+            }
+            .input-textarea {
+                background: #00000000;
+                text-indent: 0.5rem;
+                box-sizing: border-box;
+                font-size: 10pt;
+                height: 100%;
+                width: 220px;
+                color: #39c5bb;
+            }
+            .input-textarea::placeholder {
+                color: #39c5bb;
+            }
+            > .input-textarea:focus::placeholder {
+                color: #ea2b73;
+            }
+            .input-btn {
+                width: 30px;
+                background-color: #00000000;
+                background-image: url("https://www.wikimoe.com/content/templates/black_memory%20v1.1/images/css-split.png");
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                // border-radius: 0 2px 2px 0;
+            }
+            .input-btn.focus {
+                background-position: 0 -40px;
+            }
+        }
+        .search:focus {
+            background-color: #ffffff;
+        }
+    }
+}
