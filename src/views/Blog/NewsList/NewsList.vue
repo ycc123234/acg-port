@@ -1,11 +1,25 @@
 <template >
-  <div class="app-blog"></div>
+  <div id="app-newslist">
+    <bg-img/>
+    <top/>
+    <div class="main">
+      <div class="flybtn">
+        <div class="flybtn-blue">
+        
+      </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
 </template>
 <script>
 import bgimg from "../../../components/BgImg.vue";
+import top from '@/components/ACGBLOG/nav/nav.vue';
+
 export default {
   components: {
     "bg-img": bgimg,
+    "top":top
   },
   data() {
     return {
