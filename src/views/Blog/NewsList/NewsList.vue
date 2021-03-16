@@ -1,12 +1,11 @@
 <template >
   <div id="app-newslist">
-    <bg-img/>
-    <top/>
+    <bg-img />
+    <top />
     <div class="main">
       <div class="flybtn">
-        <div class="flybtn-blue">
-        
-      </div>
+        <div class="c-miku"></div>
+        <div class="c-red"></div>
       </div>
       <div></div>
     </div>
@@ -14,12 +13,12 @@
 </template>
 <script>
 import bgimg from "../../../components/BgImg.vue";
-import top from '@/components/ACGBLOG/nav/nav.vue';
+import top from "@/components/ACGBLOG/nav/nav.vue";
 
 export default {
   components: {
     "bg-img": bgimg,
-    "top":top
+    top: top,
   },
   data() {
     return {

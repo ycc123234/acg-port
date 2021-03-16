@@ -1,12 +1,39 @@
 @charset "utf-8";
 
+
+
+.c-red{background: #39c5bb;}
+.c-red{ }
+.c-yellow{}
+$ui-red-light:#e74c3c;
+$ui-red-dark:#c0392b;
+$ui-orange-light:#e67e22;
+$ui-orange-dark:#d35400;
+$ui-yellow-light:#f1c40f;
+$ui-yellow-dark:#f39c12;
+$ui-green-light:#2ecc71;
+$ui-green-dark:#27ae60;
+$ui-blue-light:#3498db;
+$ui-blue-dark:#2980b9;
+$ui-indigo-light:#1abc9c;
+$ui-indigo-dark:#16a085;
+$ui-violet-light:#9b59b6;
+$ui-violet-dark:#8e44ad;
+
+
+$ui-white-light:#ecf0f1;
+$ui-white-dark:#bdc3c7;
+$ui-grey-light:#95a5a6;
+$ui-grey-dark:#7f8c8d;
+$ui-black-light:#34495e;
+$ui-black-dark:#2c3e50;
+
 $total-width:1420px;
 $total-height:660px;
 $width-unit:$total-width/8;
 $height-unit:165px;
 $border:2*4px;
 $border-space:2*2px;
-
 .w-1 {
   width: $width-unit - $border-space - $border;
 } 
