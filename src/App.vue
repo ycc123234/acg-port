@@ -43,8 +43,9 @@ export default {
 
 
 <style lang='scss'  >
-@import "./lib/mySakura/sakura";
+@import "@/lib/mySakura/sakura";
 #app {
+  
 }
 
 

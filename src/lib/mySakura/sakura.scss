@@ -3,3 +3,26 @@
 @import 'sakura-iconfont.scss';
 @import 'sakura-template.scss';
 @import 'sakura-transition.scss';
+@import 'sakura-mixin.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+input {
+    height: inherit;
+    font: inherit;
+}
+input[type] {
+    padding: 0;
+}

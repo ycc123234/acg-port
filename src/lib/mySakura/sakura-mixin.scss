@@ -1,0 +1,7 @@
+@mixin hover-bk($color,$hovercolor) {
+    background: $color;
+    &:hover{
+        background: $hovercolor;
+        
+    }
+}

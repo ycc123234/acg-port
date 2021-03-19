@@ -1,3 +1,4 @@
+@import '@/App.scss';
 #app-newslist{
 
     .main{
@@ -9,19 +10,43 @@
     }
     .flybtn{
         position:fixed;
-        left: 200px;
+        left: 5%;
         top: 50%;
         transform: translate(0,-50%);
-
-       
-        
-        &-blue{
+        >div{
+            // box-sizing: border-box;
+            position: relative;
+            margin: 10px auto;
             width: 50px;
             height: 50px;
-            background: #39c5bb;
-            
             border-radius: 10px;
+
+            transition: .1s transform;
+            &:hover{
+                transform: scale(1.2);
+                box-shadow: 0 0 4px 2px #ffffff88, 0 0 4px 2px #ffffff88 inset;
+                
+            }
+            
         }
+        img{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+
+        }
+        .flybtn-drawer{
+            position: absolute;
+            left: 55px;
+            height: 50px;
+            line-height: 50px;;
+            padding:  0 20px;
+            border-radius: 10px;
+
+        }
+        
+        
     }
     
 }

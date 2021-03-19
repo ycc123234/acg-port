@@ -1,17 +1,51 @@
+@import '@/lib/mySakura/sakura-color.scss';
+
 $mainTheme-nav: black;      //导航栏的背景颜色
-$mainTheme-body: #00000090;//各板块的背景颜色和透明度
+$mainTheme-body: #00000090; //各板块的背景颜色和透明度
 $text-primary: #0079d3;
 $bar-height: 52px;
-* {
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-}
-input {
-    height: inherit;
-    font: inherit;
-}
-input[type] {
-    padding: 0;
-}
+
+
+.bg-red-light{background:#e74c3c;};
+.bg-red-dark{background:#c0392b;};
+.bg-orange-light{background:#e67e22;};
+.bg-orange-dark{background:#d35400;};
+.bg-yellow-light{background:#f1c40f;};
+.bg-yellow-dark{background:#f39c12;};
+.bg-green-light{background:#2ecc71;};
+.bg-green-dark{background:#27ae60;};
+.bg-blue-light{background:#3498db;};
+.bg-blue-dark{background:#2980b9;};
+.bg-indigo-light{background:#1abc9c;};
+.bg-indigo-dark{background:#16a085;};
+.bg-violet-light{background:#9b59b6;};
+.bg-violet-dark{background:#8e44ad;};
+.bg-white-light{background:#ecf0f1;};
+.bg-white-dark{background:#bdc3c7;};
+.bg-grey-light{background:#95a5a6;};
+.bg-grey-dark{background:#7f8c8d;};
+.bg-black-light{background:#34495e;};
+.bg-black-dark{background:#2c3e50;};
+
+
+.border-red-light{border:2px solid #e74c3c;};
+.border-red-dark{border:2px solid #c0392b;};
+.border-orange-light{border:2px solid #e67e22;};
+.border-orange-dark{border:2px solid #d35400;};
+.border-yellow-light{border:2px solid #f1c40f;};
+.border-yellow-dark{border:2px solid #f39c12;};
+.border-green-light{border:2px solid #2ecc71;};
+.border-green-dark{border:2px solid #27ae60;};
+.border-blue-light{border:2px solid #3498db;};
+.border-blue-dark{border:2px solid #2980b9;};
+.border-indigo-light{border:2px solid #1abc9c;};
+.border-indigo-dark{border:2px solid #16a085;};
+.border-violet-light{border:2px solid #9b59b6;};
+.border-violet-dark{border:2px solid #8e44ad;};
+.border-white-light{border:2px solid #ecf0f1;};
+.border-white-dark{border:2px solid #bdc3c7;};
+.border-grey-light{border:2px solid #95a5a6;};
+.border-grey-dark{border:2px solid #7f8c8d;};
+.border-black-light{border:2px solid #34495e;};
+.border-black-dark{border:2px solid #2c3e50;};
+
