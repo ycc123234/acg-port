@@ -21,7 +21,21 @@
         </div>
       </div>
 
-      <div></div>
+      <div class="artical-list">
+        <div class="artical-list-item ">
+
+        </div>
+        <div class="artical-list-item ">
+
+        </div>
+        <div class="artical-list-item ">
+
+        </div>
+        <div class="artical-list-item ">
+
+        </div>
+
+      </div>
     </div>
   </div>
 </template>
