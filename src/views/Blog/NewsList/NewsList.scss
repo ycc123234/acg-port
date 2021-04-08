@@ -1,68 +1,89 @@
-@import '@/App.scss';
-#app-newslist{
-
-    .main{
+@import "@/App.scss";
+#app-newslist {
+    .main {
         width: 1200px;
-        margin:0px auto;
+        margin: 0px auto;
         margin-top: 100px;
-
-        
     }
-    .flybtn{
-        position:fixed;
+    .flybtn {
+        position: fixed;
         left: 5%;
         top: 50%;
-        transform: translate(0,-50%);
-        >div{
+        transform: translate(0, -50%);
+        > div {
             // box-sizing: border-box;
             position: relative;
             margin: 10px auto;
             width: 50px;
             height: 50px;
-            border-radius: 10px;
-            transition: .1s transform;
-            &:hover{
+            border-radius: 8px;
+            transition: 0.1s transform;
+            &:hover {
                 transform: scale(1.2);
                 box-shadow: 0 0 4px 2px #ffffff88, 0 0 4px 2px #ffffff88 inset;
-                
             }
-            
         }
-        img{
+        img {
             width: 32px;
             height: 32px;
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%,-50%);
-            
+            transform: translate(-50%, -50%);
         }
-        .flybtn-drawer{
+        .flybtn-drawer {
             position: absolute;
             left: 55px;
             height: 50px;
-            line-height: 50px;;
-            padding:  0 20px;
+            line-height: 50px;
+            padding: 0 20px;
             border-radius: 10px;
-
         }
-        
-        
     }
-    .artical-list{
-        padding-top: 100px ;
-        padding-bottom: 100px ;
-
+    .artical-list {
+        padding-top: 100px;
+        padding-bottom: 100px;
         background: #ecf0f1;
         border-radius: 100px;
         overflow: hidden;
-        &-item{
-            width: 1000px;
-            height: 250px;
-            margin: 0px auto;
-            border-bottom: 4px dashed #bdc3c7;
-            
 
+        &-item {
+            padding-top: 50px;
+            width: 1000px;
+            height: 300px;
+            margin: 0px auto;
+            border-bottom: 1px dashed #131b2088;
+            color: #504e4e;
+            letter-spacing: 4px;
+            &:hover {
+                .item-title{
+                    color: #e74c3c;
+                    transform: translate(20px, 0);
+
+                }
+            }
+            .item-title {
+                transition: color .1s;
+                transition: transform .3s;
+                
+                height: 60px;
+                line-height: 60px;
+                font-size: 30px;
+                font-weight: bold;
+                line-height: 50px;
+            }
+            .item-info {
+                height: 150px;
+                padding: 0 50px;
+                line-height: 30px;
+                text-indent: 40px;
+                font-size: 16px;
+            }
+            .item-createTime {
+                height: 40px;
+                float: right;
+                color: #989898;
+            }
         }
     }
 }

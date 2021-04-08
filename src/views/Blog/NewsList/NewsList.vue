@@ -8,13 +8,13 @@
           v-for="(item, i) in flybtns"
           :key="item.id"
           v-show="item.show"
-          :class="item.classname"
+          :class="[item.classname,item.drawer_class]"
           @mouseover="inhover(item,i)"
           @mouseout="outhover(item,i)"
         >
           <img :src="item.picurl" />
           <div
-            v-show="item.drawer_show"
+            v-show="item.drawer_show||item.choose"
             :class="item.drawer_class"
             class="flybtn-drawer"
           >{{item.drawer_name}}</div>
@@ -23,16 +23,19 @@
 
       <div class="artical-list">
         <div class="artical-list-item ">
-
+          <div class="item-title">自由与面包</div>
+          <div class="item-info">亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观</div>
+          <div class="item-createTime">发布于2018-03-07</div>
         </div>
         <div class="artical-list-item ">
-
+          <div class="item-title">自由与面包</div>
+          <div class="item-info">亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观</div>
+          <div class="item-createTime">发布于2018-03-07</div>
         </div>
         <div class="artical-list-item ">
-
-        </div>
-        <div class="artical-list-item ">
-
+          <div class="item-title">自由与面包</div>
+          <div class="item-info">亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观亚洲神话的破灭与亚洲价值观</div>
+          <div class="item-createTime">发布于2018-03-07</div>
         </div>
 
       </div>
@@ -66,6 +69,7 @@ export default {
           picurl: require("@/assets/img/text_icon.png"),
           name: "xxxx",
           classname: "bg-red-light",
+          choose:true,
           drawer_show: false,
           drawer_name: "cccc",
           drawer_class:'bg-red-light border-red-dark'
@@ -76,6 +80,7 @@ export default {
           picurl: require("@/assets/img/text_icon.png"),
           name: "xxxx",
           classname: "bg-orange-light",
+          choose:false,
           drawer_show: false,
           drawer_name: "ccccccc",
           drawer_class:'bg-orange-light border-orange-dark'
@@ -86,6 +91,7 @@ export default {
           picurl: require("@/assets/img/text_icon.png"),
           name: "xxxx",
           classname: "bg-yellow-light",
+          choose:false,
           drawer_show: false,
           drawer_name: "cccccc",
           drawer_class:'bg-yellow-light border-yellow-dark'
@@ -96,6 +102,7 @@ export default {
           picurl: require("@/assets/img/text_icon.png"),
           name: "xxxx",
           classname: "bg-green-light",
+          choose:false,
           drawer_show: false,
           drawer_name: "cccccccccccccc",
           drawer_class:'bg-green-light border-green-dark'
@@ -106,6 +113,7 @@ export default {
           picurl: require("@/assets/img/text_icon.png"),
           name: "xxxx",
           classname: "bg-blue-light",
+          choose:false,
           drawer_show: false,
           drawer_name: "ccccccccc",
           drawer_class:'bg-blue-light border-blue-dark'
@@ -116,6 +124,7 @@ export default {
           picurl: require("@/assets/img/text_icon.png"),
           name: "xxxx",
           classname: "bg-indigo-light",
+          choose:false,
           drawer_show: false,
           drawer_name: "cccc",
           drawer_class:'bg-indigo-light border-indigo-dark'
@@ -126,6 +135,7 @@ export default {
           picurl: require("@/assets/img/text_icon.png"),
           name: "xxxx",
           classname: "bg-violet-light",
+          choose:false,
           drawer_show: false,
           drawer_name: "cccc",
           drawer_class:'bg-violet-light border-violet-dark'

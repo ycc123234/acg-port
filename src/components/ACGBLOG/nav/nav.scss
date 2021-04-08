@@ -5,7 +5,8 @@
 }
  
 #o-head {
-    
+    box-shadow: 0 0px 50px 0px black;
+    z-index: 99999;
     position: fixed;
     top: 0;
     left: 0;

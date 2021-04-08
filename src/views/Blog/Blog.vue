@@ -133,7 +133,13 @@ export default {
   },
   methods: {
     
-    goNewsList: function () {},
+    goNewsList: function () {
+      this.$router.push("news/list");
+    //    let routeUrl = this.$router.resolve({
+    //       path: "/blog",
+    //  });
+    //  window.open(routeUrl .href, '_blank');
+    },
     
     getNewsList() {
       // newsList数据获取

@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import Home from './views/Home/Home.vue'
 import Blog from './views/Blog/Blog.vue'
 import NewsList from './views/Blog/NewsList/NewsList.vue'
+import NewsContent from './views/Blog/NewsContent/NewsContent.vue'
 
 import AdminLogin from './views/Admin/Login/Login.vue'
 import Admin from './views/Admin/Admin.vue' 
@@ -25,8 +26,13 @@ const router=new Router({
     },
     {
       path: '/blog/news/list',
-      name: 'news',
+      name: 'newslist',
       component: NewsList
+    },
+    {
+      path: '/blog/news/content',
+      name: 'newslcontent',
+      component: NewsContent
     },
     {
       path: '/about',
