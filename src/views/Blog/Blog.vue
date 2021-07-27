@@ -6,16 +6,16 @@
 
       <div id="myBlog">
         <!-- //nav -->
-        <o-nav/>
+        <o-nav />
         <!-- //body -->
 
-        <div id="o-body">
+        <div id="main">
           <!-- //article -->
           <div class="item news">
             <div>
               <div class="news-title">
                 <div>最新内容</div>
-                <div class="more" @click="goNewsList">更多+</div>
+                <div class="more" @click="goArticalList">更多+</div>
               </div>
               <div class="news-content" v-for="(item, i) in newsList" :key="i">
                 <div class="item" :data-id="item.id">
@@ -99,15 +99,17 @@
 <script>
 import bgimg from "../../components/BgImg.vue";
 import nav from "@/components/ACGBLOG/nav/nav.vue";
-
+import { dateFilter } from "@/utils/filters.js";
 export default {
   components: {
     "bg-img": bgimg,
     "o-nav": nav,
   },
+  filters: {
+    dateFilter,
+  },
   data() {
     return {
-     
       newsList: [
         {
           id: -1,
@@ -126,30 +128,18 @@ export default {
     };
   },
   created() {
-    this.getNewsList();
+    this.getArticalList();
   },
-  mounted() {
-    console.log("123456");
-  },
+  mounted() {},
   methods: {
-    
-    goNewsList: function () {
-      this.$router.push("news/list");
-    //    let routeUrl = this.$router.resolve({
-    //       path: "/blog",
-    //  });
-    //  window.open(routeUrl .href, '_blank');
+    goArticalList: function () {
+      this.$router.push("/blog/news/list");
     },
-    
-    getNewsList() {
+    getArticalList() {
       // newsList数据获取
-      console.log("getNewsList");
-      this.$axios
-        .get("/cms/artical/list", { params: this.pages })
-        .then((result) => {
-          console.log(result);
-          this.newsList = result.data.data.list;
-        });
+      this.$api.newslist({ params: this.pages }).then((result) => {
+         this.newsList = result.data.list;
+      });
     },
   },
 };

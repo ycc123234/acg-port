@@ -2,17 +2,15 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 
-import Home from './views/Home/Home.vue'
-import Blog from './views/Blog/Blog.vue'
-import NewsList from './views/Blog/NewsList/NewsList.vue'
-import NewsContent from './views/Blog/NewsContent/NewsContent.vue'
+import Home from './views/home/Home.vue'
+import Blog from './views/blog/Blog.vue'
+import ArticalList from './views/blog/articalList/ArticalList.vue'
+import ArticalContent from './views/blog/articalContent/ArticalContent.vue'
 
-import AdminLogin from './views/Admin/Login/Login.vue'
-import Admin from './views/Admin/Admin.vue' 
-import AcgArtical from './components/ACGBLOG/article/artical.vue'
 Vue.use(Router)
 
 const router=new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
@@ -27,12 +25,12 @@ const router=new Router({
     {
       path: '/blog/news/list',
       name: 'newslist',
-      component: NewsList
+      component: ArticalList
     },
     {
-      path: '/blog/news/content',
+      path: '/blog/news/content/:id',
       name: 'newslcontent',
-      component: NewsContent
+      component: ArticalContent
     },
     {
       path: '/about',
@@ -41,45 +39,25 @@ const router=new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    },
-    {
-      path:'/admin/login',
-      name:'login',
-      component:AdminLogin,
-      
-      
-    },
-    {
-      path:'/admin',
-      name:'admin',
-      component:Admin,
-      children:[
-        {
-          path:'acgblog/artical',
-          name:'acg-artical',
-          component:AcgArtical
-        }
-      ]
-
-    },
+    }
     
   ]
 })
 //导航守卫
 // 使用 router.beforeEach 注册一个全局前置守卫，判断用户是否登陆
-router.beforeEach((to, from, next) => {
-  //debugger
-  if (to.path === '/admin/login') {
-    next();
-  } else {
-    let token = sessionStorage.getItem('Authorization');
-    console.log('rb',token)
-    if (!token) {
-      next('/admin/login');
-    } else {
-      next();
-    }
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   //debugger
+//   if (to.path === '/admin/login') {
+//     next();
+//   } else {
+//     let token = sessionStorage.getItem('Authorization');
+//     // console.log('rb',token)
+//     if (!token) {
+//       next('/admin/login');
+//     } else {
+//       next();
+//     }
+//   }
+// });
 
 export default  router;

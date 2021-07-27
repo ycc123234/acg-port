@@ -14,8 +14,10 @@ class Zqili {
 		}
 		return new Proxy(Zqili.objectProxy, handle)
 	}
-
-
+//Symbol唯一值生成器
+	setSymbol(word){
+		return Symbol(word)
+	}
 	//禁止新增属性代理,禁止访问未定义的属性
 	static objectProxy(obj) {
 		let handle = new Object();

@@ -19,8 +19,8 @@
             border-radius: 8px;
             transition: 0.1s transform;
             &:hover {
-                transform: scale(1.2);
-                box-shadow: 0 0 4px 2px #ffffff88, 0 0 4px 2px #ffffff88 inset;
+                transform: scale(1.1);
+                // box-shadow: 0 0 4px 2px #ffffff88, 0 0 4px 2px #ffffff88 inset;
             }
         }
         img {
@@ -52,9 +52,10 @@
             width: 1000px;
             height: 300px;
             margin: 0px auto;
-            border-bottom: 1px dashed #131b2088;
+            // border-bottom: 1px dashed #131b2088;
             color: #504e4e;
             letter-spacing: 4px;
+            cursor: pointer;
             &:hover {
                 .item-title{
                     color: #e74c3c;

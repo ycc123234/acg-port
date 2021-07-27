@@ -1,4 +1,4 @@
-
+//该文件为音乐功能插件脚本
 export default {
     //销毁播放器
     discreateAudio(){

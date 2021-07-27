@@ -131,7 +131,6 @@ export default {
 
   methods: {
     goBlog() {
-      console.log("111");
       // this.$router.push("blog");
        let routeUrl = this.$router.resolve({
           path: "/blog",
