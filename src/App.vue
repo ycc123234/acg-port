@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    
+    <loading></loading>
     <router-view></router-view>
   </div>
 </template>
 <script>
+import Loading from '@/components/loading.vue'
 export default {
+  components:{'loading':Loading},
   created() {
     // setTimeout(() => {
     //   window.L2Dwidget.init({

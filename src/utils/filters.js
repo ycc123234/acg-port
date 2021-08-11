@@ -16,16 +16,22 @@ export const audioAtTime = (time) => {
 export const dateFilter = (d) => {
     d = Number(d);
     const date = new Date(d);
-
-    var month = Number.parseInt(date.getMonth()) + 1
-    var day = Number.parseInt(date.getDate())
-    var hours = Number.parseInt(date.getHours())
-    var minutes = Number.parseInt(date.getMinutes())
-
-    month = month > 10 ? month : ('0' + month);
-    day = day > 10 ? day : ('0' + day);
-    hours = hours > 10 ? hours : ('0' + hours);
-    minutes = minutes > 10 ? minutes : ('0' + minutes);
-
-    return `${date.getFullYear()}-${month}-${day} ${hours}:${minutes}`
+    let days=parseInt((new Date().getTime()-date.getTime())/86400000)
+    console.log(new Date().getTime(),date.getTime())
+    if(days<=30){
+        return days==0?'今天':days+'天前' 
+    }else{
+        var month = Number.parseInt(date.getMonth()) + 1
+        var day = Number.parseInt(date.getDate())
+        var hours = Number.parseInt(date.getHours())
+        var minutes = Number.parseInt(date.getMinutes())
+    
+        month = month >= 10 ? month : ('0' + month);
+        day = day >= 10 ? day : ('0' + day);
+        hours = hours >= 10 ? hours : ('0' + hours);
+        minutes = minutes >= 10 ? minutes : ('0' + minutes);
+    
+        return `${date.getFullYear()}-${month}-${day} ${hours}:${minutes}`
+    }
+  
 }

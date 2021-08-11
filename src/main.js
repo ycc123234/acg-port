@@ -4,14 +4,15 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import api from './utils/api'
+import consts from './utils/consts'
 import qs from 'qs';
-
+import "@/lib/font-awesome-4.7.0/scss/font-awesome.scss";
 Vue.config.productionTip = false
+Vue.prototype.$consts=consts
 Vue.prototype.$qs=qs;
 Vue.prototype.$axios=axios
 api.__proto__=Vue.prototype
 Vue.prototype.$api=api
-
 // Vue.filter('dateFilter', function(d) {
 //   d=Number(d);
 // 	const date = new Date(d);
@@ -34,5 +35,6 @@ Vue.prototype.$api=api
 new Vue({
   router,
   store,
+  consts,
   render: h => h(App)
 }).$mount('#app')

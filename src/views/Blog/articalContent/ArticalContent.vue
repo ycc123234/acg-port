@@ -5,11 +5,11 @@
     <div class="main">
       <div class="content">
         <div class="outline">
-          <h1 class="outline-title"><span>自由与面包<test>
-            <template>
-              
-            </template>
-            </test></span></h1>
+          <h1 class="outline-title">
+            <span
+              >自由与面包<test> <template> </template> </test
+            ></span>
+          </h1>
           &nbsp;
           <div class="outline-author">·&nbsp;<span>Mashiro</span></div>
           &nbsp;
@@ -86,14 +86,14 @@
 import bgimg from "../../../components/BgImg.vue";
 import top from "@/components/ACGBLOG/nav/nav.vue";
 import testComponent from "@/components/testComponent.vue";
-import Template from '../../../components/template.vue';
+import Template from "../../../components/template.vue";
 export default {
   components: {
     "bg-img": bgimg,
     top: top,
-  test:testComponent
+    test: testComponent,
   },
-  data(){
+  data() {
     return {
       isShow: true,
       otherArr: [
@@ -164,22 +164,59 @@ export default {
       ],
     };
   },
-  beforeCreate() {
-    let url =
-      "http://192.168.42.110:8080/%E8%87%AA%E7%94%B1%E4%B8%8E%E9%9D%A2%E5%8C%85.txt";
-    let _this = this;
-    this.$axios.get(url).then((result) => {
-      console.log(result);
-      textContent.innerHTML = result.data;
-      _this.isShow = true;
-      this.createCatalogs();
-    });
-  },
+  //
+  beforeCreate() {},
   created() {
+    let id = this.$route.params.id || null;
+    if (!id) console.log(this.$route.params);
+    else this.init({ id });
     // this.handleArticalList();
   },
   mounted() {},
   methods: {
+    init(params) {
+      let id = params.id;
+      console.log("id", id);
+      this.$store.state.loading=true
+      this.initContent(id)
+        .then((url) => {
+          return new Promise((resolve, reject) => {
+            this.$axios.get(url).then((result) => {
+              textContent.innerHTML = result.data;
+              resolve(true);
+            });
+          });
+        })
+        .then((statu) => {
+          console.log("creaateCatalogs", statu);
+          if (statu) {
+            this.createCatalogs();
+            return true;
+          } else {
+            consnole.log("目录创建失败");
+            return false;
+          }
+        })
+        .then((statu)=>{
+          if(statu){
+            this.$store.state.loading=false
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+    initContent(id) {
+      return this.$api.getNoticeContent(id).then((result) => {
+        let data = result.data[0];
+        let url = data.content;
+        return url;
+      });
+    },
+    /**
+     * @description 创建目录
+     * @property {String} textContent 正文内容
+     */
     createCatalogs() {
       let arr = textContent.getElementsByClassName("catalog");
       let _catalogs = [];
@@ -205,22 +242,11 @@ export default {
         this.boxSwitch[index].show = true;
       });
     },
-
-    handleArticalList() {
-      getArticalList();
-    },
-    getArticalList() {
-      // newsList数据获取
-      this.$axios
-        .get("/cms/artical/list", { params: this.pages })
-        .then((result) => {
-          return result.data.data.list;
-        });
-    },
+    
   },
 };
 </script>
 
 <style lang="scss" >
-@import "./articalContent.scss";  
+@import "./articalContent.scss";
 </style>

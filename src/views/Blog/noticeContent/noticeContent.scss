@@ -1,0 +1,75 @@
+@import "@/App.scss";
+#app-noticecontent {
+    font-family: notoSerif;
+    .lazyload {
+        filter: blur(0px);
+        transition: 0.3s filter linear;
+    }
+    .main {
+        .title {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            &-bg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                pointer-events: none;
+            }
+            &-msg {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1;
+                > div {
+                    width: 1000px;
+                    margin: 0 auto;
+                    font-weight: 500;
+                    color: #fff;
+                    text-shadow: 2px 2px 10px #000;
+                    > div {
+                        margin: 25px 0;
+                    }
+                    .title-text {
+                        font-size: 32px;
+                    }
+                    .title-info > div {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    .title-face {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: white;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            pointer-events: none;
+
+                        }
+                    }
+                    .title-artical {
+                    }
+                    .title-date {
+                    }
+                    .title-visit {
+                    }
+                    .dot{margin: 0 5px;}
+                }
+            }
+        }
+        .body{
+            width: 1000px;
+            margin: 0 auto;
+            margin-top:50px;
+            .content{
+
+            }            
+        }
+
+    }
+}

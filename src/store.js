@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     myAudio: null,
     // work  正常  pic 壁纸模式
-    mode: 'work'
+    mode: 'work',
+    loading:false
   },
   mutations: {//需要执行多个state 的操作 , 使用 mutations 会来触发会比较好维护
     increment(state, myaudio) {

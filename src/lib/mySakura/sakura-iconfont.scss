@@ -3,29 +3,7 @@
   font-family: "pixel";
   src: url("~@/lib/mySakura/lib/pixel-china.ttf");
 }
-
 @font-face {
-  font-family: "fas";
-  src: url("~@/lib/mySakura/lib/fa-solid-900.ttf");
-}
-@font-face {
-  font-family: "far";
-  src: url("~@/lib/mySakura/lib/fa-regular-400.ttf");
-}
-@font-face {
-  font-family: "fab";
-  src: url("~@/lib/mySakura/lib/fa-brands-400.ttf");
-}
-.fas{
-  font-family: "fas","fab","far" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-//显示器
-.icon-pcclient:before {
-  content: "\F108";
+  font-family: "notoSerif";
+  src: url("~@/lib/mySakura/lib/noto-serif-sc/NotoSerifSC-Regular.otf");
 }

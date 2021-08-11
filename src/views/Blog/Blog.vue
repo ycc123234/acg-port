@@ -17,7 +17,12 @@
                 <div>最新内容</div>
                 <div class="more" @click="goArticalList">更多+</div>
               </div>
-              <div class="news-content" v-for="(item, i) in newsList" :key="i">
+              <div
+                class="news-content"
+                v-for="(item, i) in newsList"
+                @click="goContent(item.category, item.id)"
+                :key="i"
+              >
                 <div class="item" :data-id="item.id">
                   <div class="item-category" v-if="item.category == 1">
                     通知
@@ -26,7 +31,7 @@
                     活动
                   </div>
                   <div class="item-category" v-else-if="item.category == 3">
-                    资料
+                    文章
                   </div>
                   <div class="item-category" v-else-if="item.category == 4">
                     热点
@@ -48,7 +53,7 @@
               <div class="info">
                 <div>
                   <span>昵称：</span>
-                  <span>龙傲天</span>
+                  <span>George</span>
                 </div>
                 <div>
                   <span>年龄：</span>
@@ -60,13 +65,13 @@
                 </div>
                 <div>
                   <span>喜好：</span>
-                  <span>跑团、编曲</span>
+                  <span>赚钱，花钱</span>
                 </div>
               </div>
               <div class="motto">
                 <div>
                   <span>简介：</span>
-                  <span>人类的赞歌就是勇气的赞歌･ᴗ･</span>
+                  <span>先赚他一个亿</span>
                 </div>
               </div>
             </div>
@@ -128,18 +133,41 @@ export default {
     };
   },
   created() {
-    this.getArticalList();
+    this.init();
   },
   mounted() {},
   methods: {
+    init() {
+      this.getList()
+        .then(() => {
+          if (this.newsList[0].id != -1) {
+            this.$store.state.loading = false;
+          } else {
+            console.log(this.newsList);
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
     goArticalList: function () {
       this.$router.push("/blog/news/list");
     },
-    getArticalList() {
+
+    getList() {
       // newsList数据获取
-      this.$api.newslist({ params: this.pages }).then((result) => {
-         this.newsList = result.data.list;
+
+      this.$store.state.loading = true;
+      return this.$api.newslist(this.pages).then((result) => {
+        this.newsList = result.data.list;
       });
+    },
+    goContent(category, id) {
+      if (category == 1) {
+        this.$router.push("/blog/notice/content/" + id);
+      } else if (category == 3) {
+        this.$router.push("/blog/news/content/" + id);
+      }
     },
   },
 };

@@ -6,6 +6,7 @@ import Home from './views/home/Home.vue'
 import Blog from './views/blog/Blog.vue'
 import ArticalList from './views/blog/articalList/ArticalList.vue'
 import ArticalContent from './views/blog/articalContent/ArticalContent.vue'
+import NoticeContent from './views/blog/noticeContent/noticeContent.vue'
 
 Vue.use(Router)
 
@@ -29,8 +30,13 @@ const router=new Router({
     },
     {
       path: '/blog/news/content/:id',
-      name: 'newslcontent',
+      name: 'newscontent',
       component: ArticalContent
+    },
+    {
+      path: '/blog/notice/content/:id',
+      name: 'noticecontent',
+      component: NoticeContent
     },
     {
       path: '/about',

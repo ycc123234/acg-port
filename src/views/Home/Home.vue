@@ -35,7 +35,7 @@
           <div class="box w-1 h-1" @click="goBlog">
             <div class="content cell-style">
               <div>
-                <div class="icon fas icon-pcclient" style="display: block;font-size: 46px;"></div>
+                <i class="fa fa-paper-plane-o fa-4x" aria-hidden="true"></i>
               </div>
               <div class="name">我的博客</div>
             </div>
