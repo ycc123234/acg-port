@@ -45,14 +45,10 @@ export default {
 
 
 <style lang='scss'  >
-@import "@/lib/mySakura/sakura";
+@import "@/lib/mySakura/index";
 #app {
   
 }
 
-body {
-  padding: 0px;
-  margin: 0px;
-  /* overflow: hidden; */
-}
+
 </style>

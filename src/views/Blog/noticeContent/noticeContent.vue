@@ -9,9 +9,9 @@
           class="title-bg lazyload"
           onerror="imgError(this,3)"
         />
-        <div class="title-msg">
+        <div class="title-msg title-white">
           <div>
-            <div class="title-text">基于 SCSS mixin 的 flex gap polyfill</div>
+            <div class="title-text ">基于 SCSS mixin 的 flex gap polyfill</div>
             <div class="title-info">
               <!-- 圆形头像 -->
               <div class="title-face">
@@ -38,12 +38,73 @@
 
       <div class="body">
         <div class="content">重要通知：2021年8月11日，本站正式成立！</div>
-        <div class="labs">
-          <i class="fa fa-bandcamp" aria-hidden="true"></i>
-          <div class="fas icon-tags bg1" style="display: block;"></div>
-          <div class="labs-item"></div>
-          <div class="labs-item"></div>
-          <div class="labs-item"></div>
+        <div class="tags">
+          <i class="fa fa-tag" aria-hidden="true"></i>
+          <div class="tag">无</div>
+          <div class="tag">无</div>
+        </div>
+        <div id="slide2" class="slide">
+           <div class="slide-ctrl">
+              <div class="ctrl-left" style="">
+                <i
+                  class="fa fa-arrow-left fa-2x"
+                  style=""
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div class="ctrl-right" @click="handleSlideRightBtn" style="">
+                <i
+                  class="fa fa-arrow-right fa-2x"
+                  style=""
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </div>
+          <div class="slide-view">
+           
+            <div class="slide-list">
+              <div class="slide-item">
+                <a>
+                  <div class="slide-item-bg">
+                    <img
+                      src="https://2heng.xin/wp-content/uploads//2021/07/20210729_025259-scaled.jpg"
+                    />
+                  </div>
+                  <div class="slide-item-info title-white">推荐阅读1</div>
+                </a>
+              </div>
+              <div class="slide-item">
+                <a>
+                  <div class="slide-item-bg">
+                    <img
+                      src="https://2heng.xin/wp-content/uploads//2021/07/20210729_025259-scaled.jpg"
+                    />
+                  </div>
+                  <div class="slide-item-info title-white">推荐阅读2</div>
+                </a>
+              </div>
+              <div class="slide-item">
+                <a>
+                  <div class="slide-item-bg">
+                    <img
+                      src="https://2heng.xin/wp-content/uploads//2021/07/20210729_025259-scaled.jpg"
+                    />
+                  </div>
+                  <div class="slide-item-info title-white">推荐阅读3</div>
+                </a>
+              </div>
+              <div class="slide-item">
+                <a>
+                  <div class="slide-item-bg">
+                    <img
+                      src="https://2heng.xin/wp-content/uploads//2021/07/20210729_025259-scaled.jpg"
+                    />
+                  </div>
+                  <div class="slide-item-info title-white">推荐阅读4</div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -68,6 +129,7 @@ export default {
         status: 0,
         //xxxxxxxxxxxxxxxxxxxxxxxxxxxx
       },
+      left:0
     };
   },
   created() {
@@ -92,6 +154,16 @@ export default {
         });
     },
     initContent(id) {},
+    handleSlideRightBtn(){
+      let slideList=slide2.getElementsByClassName('slide-list')[0]
+      let items=slide2.getElementsByClassName('slide-item');
+      let itemWidth=items[0].clientWidth
+      console.log(slideList.style)
+      slideList.style.left-=itemWidth
+    },
+    handleSlideLeftBtn(){
+      console.log()
+    },
   },
 };
 </script>

@@ -1,15 +1,9 @@
 @charset "utf-8";
-//通用样式
-@import 'sakura-css.scss';
-//字体导入
-@import 'sakura-iconfont.scss';
-//格式模板
-@import 'sakura-template.scss';
-//动画样式
-@import 'sakura-transition.scss';
-//混淆器
-@import 'sakura-mixin.scss';
-//样式初始化
+//选中文字样式
+::selection {
+    background: #444;
+    color: #ecf0f1;
+}
 * {
     margin: 0;
     padding: 0;
@@ -45,3 +39,9 @@ a:link{
     color: black;
 
 }
+
+body {
+    padding: 0px;
+    margin: 0px;
+    /* overflow: hidden; */
+  }

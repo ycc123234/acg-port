@@ -1,4 +1,3 @@
-@import "@/App.scss";
 #app-newscontent {
     .main {
         >div:first-child{
@@ -50,7 +49,7 @@
             padding: 40px;
             > div {
                 line-height: 30px;
-                color: #737373;
+                color: $text-color-primary;
 
                 > h2 {
                     line-height: 40px;
@@ -155,10 +154,6 @@
                     &::-webkit-scrollbar-track {
                         border-radius: 0px;
                         background: rgba(0, 0, 0, 0.1);
-                    }
-                    ::selection {
-                        background: #444;
-                        color: #ecf0f1;
                     }
                     height: 64vh;
                 }

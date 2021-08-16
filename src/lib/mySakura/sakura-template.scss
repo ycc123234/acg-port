@@ -1,14 +1,11 @@
 @charset "utf-8";
-
-
-
-
 $total-width:1420px;
 $total-height:660px;
 $width-unit:$total-width/8;
 $height-unit:165px;
 $border:2*4px;
 $border-space:2*2px;
+
 .w-1 {
   width: $width-unit - $border-space - $border;
 } 
