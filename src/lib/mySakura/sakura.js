@@ -1,5 +1,5 @@
 var _this;
-class Zqili {
+class Sakura {
 	constructor() {
 		_this = this;
 
@@ -14,8 +14,8 @@ class Zqili {
 		}
 		return new Proxy(Zqili.objectProxy, handle)
 	}
-//Symbol唯一值生成器
-	setSymbol(word){
+	//Symbol唯一值生成器
+	setSymbol(word) {
 		return Symbol(word)
 	}
 	//禁止新增属性代理,禁止访问未定义的属性
@@ -56,11 +56,11 @@ class Zqili {
 			let num = count;
 			let algorithm;
 			if (count > 0) {
-				algorithm = function() {
+				algorithm = function () {
 					return count -= step
 				}
 			} else {
-				algorithm = function() {
+				algorithm = function () {
 					return count += step
 				}
 			}
@@ -74,7 +74,7 @@ class Zqili {
 			}, step * 1000)
 		})
 	}
-	nextList = function*(list) {
+	nextList = function* (list) {
 		if (list.length == 0) {
 			while (true) {
 				yield list();
@@ -108,7 +108,7 @@ class Zqili {
 	//统计数组中的相同值个数
 	countArr(arr) {
 		var arrObj = arr.reduce(
-			function(obj, name) {
+			function (obj, name) {
 				obj[name] = obj[name] ? ++obj[name] : 1;
 				return obj;
 			}, {}
@@ -118,7 +118,7 @@ class Zqili {
 	//精确到指定位数的小数 eg:round(1.1415926,2)==1.14
 	floatFloor = (n, decimals) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`)
 	//将对象彻底冻结
-	constantize(obj) => {
+	constantize(obj) {
 		Object.freeze(obj);
 		Object.keys(obj).forEach((key, i) => {
 			if (typeof obj[key] === 'object') {
@@ -135,8 +135,8 @@ class Zqili {
 			(typeof process === 'object' &&
 				typeof require === 'function' &&
 				typeof global === 'object') ?
-			global :
-			this);
+				global :
+				this);
 	}
 
 	// 方法二
@@ -152,6 +152,22 @@ class Zqili {
 		}
 		throw new Error('unable to locate global object');
 	};
+	/**
+	 * @description 字符串分割并合并回字符串
+	 * @param {String} bufs 
+	 * @param {String} str 
+	 * @param {Number} count 
+	 */
+	superSplice(bufs, str, count) {
+		bufs = bufs.split(str)
+		if (bufs.length < count * -1) {
+			return '';
+		}
+		if (count > 0) bufs.splice(0, Math.sqrt(count*count));
+		else bufs.splice(bufs.length - 1, Math.sqrt(count*count));
+		bufs = bufs.join('');
+		return bufs;
+	}
 }
 
-export default Zqili
+export default Sakura

@@ -40,8 +40,10 @@ export default {
     // background: url("https://random.52ecy.cn/randbg.php") no-repeat center;
     // background: url("https://i0.hdslb.com/bfs/archive/640d7cea873a157e29b0795e6319fccb5280f93c.jpg@1920w_1080h.webp") no-repeat center;
     //明日方舟
-    background-color: cadetblue;
-    background: url("https://api.2heng.xin/cover/") no-repeat center;
+    background-color: whitesmoke;    
+    background-image: url("https://api.2heng.xin/cover/");
+    background-origin: center;
+    background-repeat: no-repeat; 
     // background: url(~@/assets/img/xxxx.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;

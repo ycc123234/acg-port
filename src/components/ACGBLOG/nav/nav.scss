@@ -13,7 +13,7 @@
     font-family: pixel;
     width: 100%;
     height: $bar-height;
-    background-color: $mainTheme-nav;
+    background-color: black;
     // display: flex;
     & > div {
         height: 100%;
@@ -69,7 +69,7 @@
             .item:hover {
                 background: #363c41;
                 .title {
-                    color: #39c5bb;
+                    color: $mainTheme-nav;
                     font-weight: bold;
                 }
             }
@@ -78,7 +78,7 @@
     .pic-mode{
         color: white;
         display: inline-block;
-        background:#39c5bb ;
+        // background:$primary-theme ;
         padding: 0 10px;
         float: right;
         #PicMode{
@@ -113,10 +113,10 @@
                 font-size: 12pt;
                 height: 100%;
                 width: 220px;
-                color: #39c5bb;
+                color: $mainTheme-nav;
             }
             .input-textarea::placeholder {
-                color: #39c5bb;
+                color: $mainTheme-nav;
             }
             > .input-textarea:focus::placeholder {
                 color: #ea2b73;

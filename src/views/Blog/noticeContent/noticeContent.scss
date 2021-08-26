@@ -5,23 +5,23 @@
         filter: blur(0px);
         transition: 0.3s filter linear;
     }
-    .title-white{
+    .title-white {
         font-weight: 500;
         color: #fff;
         text-shadow: 2px 2px 10px #000;
     }
-    .main {
-        .title {
+    .body {
+        .head-title {
             width: 100%;
             height: 400px;
             position: relative;
-            &-bg {
+            .title-bg {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 pointer-events: none;
             }
-            &-msg {
+            .title-msg {
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -31,8 +31,6 @@
                     width: 1000px;
                     margin: 0 auto;
 
-
-                    
                     > div {
                         margin: 25px 0;
                     }
@@ -62,16 +60,12 @@
                     }
                     .title-visit {
                     }
-                    .dot {
-                        margin: 0 5px;
-                    }
                 }
             }
         }
-        .body {
+        .main {
             width: 1000px;
-            margin: 0 auto;
-            margin-top: 50px;
+            margin: 50px auto;
             color: $text-color-primary;
         }
         .tags {
@@ -118,43 +112,253 @@
             .slide-list {
                 width: 2000px;
                 height: 150px;
-
+                margin-left: 0px;
+                transition: margin-left 0.3s ease-out;
                 .slide-item {
                     width: 280px;
                     height: 130px;
-                    background:black;
+                    background: black;
                     margin: 10px;
                     display: inline-block;
                     border-radius: 6px;
                     overflow: hidden;
                     position: relative;
-                    .slide-item-bg{
+                    .slide-item-bg {
                         width: 100%;
                         height: 100%;
-                        opacity: .5;
-                        transition: opacity .15s  ease-out ;
-                        &:hover{
-                            opacity: .7;
+                        opacity: 0.5;
+                        transition: opacity 0.15s ease-out;
+                        &:hover {
+                            opacity: 0.7;
                         }
-                        img{
+                        img {
                             width: 100%;
                             height: 100%;
                             object-fit: cover;
-
                         }
                     }
-                    .slide-item-info{
+                    .slide-item-info {
                         pointer-events: none;
                         position: absolute;
-                     z-index: 1;
-                     top: 50%;
-                     left: 50%;
-                     width: 200px;
-                     
-                     transform: translate(-50%,-50%);
+                        z-index: 1;
+                        top: 50%;
+                        left: 50%;
+                        width: 200px;
 
+                        transform: translate(-50%, -50%);
                     }
+                }
+            }
+        }
+        .comments {
+            .head {
+                margin: 50px 0;
+            }
+            .list {
+                .item {
+                    margin: 50px 0;
+                    .comment {
+                        border-bottom: 1px solid whitesmoke;
+                        &:hover {
+                            .title > .reply-btn {
+                                opacity: 1;
+                            }
+                        }
+                        .title {
+                            position: relative;
+                            margin: 50px 0 0px 0;
+                            > div {
+                                display: inline-block;
+                            }
+                            .reply-btn {
+                                cursor: pointer;
+                                transition: opacity 0.13s ease-out;
+                                opacity: 0;
+                                position: absolute;
+                                width: 60px;
+                                height: 22px;
+                                line-height: 22px;
+                                background: $primary-theme;
+                                color: white;
+                                font-size: 12px;
+                                text-align: center;
+                                border-radius: 3px;
+                                right: 0;
+                                top: 0;
+                            }
+                            .user-pic {
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+                                overflow: hidden;
+                                margin-right: 10px;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                            .user-info {
+                                vertical-align: top;
+                                .nickname {
+                                    font-weight: bold;
+                                    color: $primary-theme;
+                                }
+                                .info {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                        .content {
+                            margin: 20px 0;
+                        }
+                    }
+                    .reply-list {
+                        .reply-item {
+                            margin-left: 40px;
+                        }
+                    }
+                }
+            }
+        }
+        .edit-comment {
+            .author-content {
+                textarea:focus {
+                    border: 1px solid $primary-theme;
+                }
+                textarea {
+                    width: 100%;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                }
+            }
+            .author-info {
+                margin-top: 20px;
+                > div {
+                    display: inline-block;
+                }
+                > div + div {
+                    margin-left: 10px;
+                }
 
+                input {
+                    width: 100%;
+                    height: 60px;
+                    padding: 20px;
+                    font-size: 14px;
+                    border: 1px solid #ccc;
+                    border-radius: 2px;
+
+                    &:focus {
+                        border-color: $primary-theme;
+                        color: $primary-theme;
+                        &::-webkit-input-placeholder {
+                            color: $primary-theme;
+                        }
+                    }
+                }
+                .qqpic {
+                    width: 60px;
+                    height: 60px;
+                    border: 1px solid #ccc;
+                    vertical-align: bottom;
+                    border-radius: 2px;
+                    overflow: hidden;
+                    text-align: center;
+                    line-height: 60px;
+                    img {
+                        pointer-events: none;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .qqnumber {
+                    width: 200px;
+                }
+                .qqnickname {
+                    width: 200px;
+                }
+                .email {
+                    width: 200px;
+                }
+                .web {
+                    width: 300px;
+                }
+            }
+            .commit-btn {
+                > div {
+                    margin-top: 20px;
+                }
+                .checking {
+                    font-size: 12px;
+                    &:hover {
+                        color: $primary-theme;
+                    }
+                }
+                .send {
+                    width: 100%;
+                    height: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    position: relative;
+                    overflow: hidden;
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        position: absolute;
+                        width: 100%;
+                        height: 50px;
+                        background: $primary-theme;
+                        left: 0%;
+                        bottom: 0;
+                        transition: transform 0.3s ease-out;
+                        z-index: -1;
+                        transform: scaleX(0);
+                        transform-origin: right;
+                    }
+                    &:hover {
+                        border-color: $primary-theme;
+                        color: black;
+                        &::after {
+                            transform-origin: left;
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+        }
+        .foot {
+            font-family: "ubuntu";
+            color: #666;
+            width: 100%;
+            height: 200px;
+            background: whitesmoke;
+
+            .content {
+                width: $content-width;
+                height: 100%;
+                margin: 0 auto;
+                text-align: center;
+                .setting {
+                    margin: 30px auto;
+                    color: $primary-theme;
+                    opacity: 0.5;
+                    i {
+                        cursor: pointer;
+                    }
+                }
+                .beian {
+                    font-family: initial;
+                    color: #b9b9b9;
+                    font-size: 12px;
+                    font-weight: bold;
+                    a:hover{color: $primary-theme;}
+                }
+                > div {
+                    margin: 10px auto;
                 }
             }
         }

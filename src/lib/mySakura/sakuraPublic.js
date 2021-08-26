@@ -1,6 +1,10 @@
-import Zqili from './Zqili.js'
+import Sakura from './sakura.js'
 
-const zq = new Zqili();
+const zq = new Sakura();
+//字符串分割并合并回字符串
+export function superSplice(bufs, str, count){
+	return zq.superSplice(bufs, str, count);	
+}
 //安全代理
 export function proxy(obj) {
 	let proxy = new zq.newProxy()

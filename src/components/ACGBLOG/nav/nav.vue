@@ -149,8 +149,8 @@ export default {
         //壁纸模式
         case "pic":
           var mainElem =
-            document.getElementsByClassName("main")[0] ||
-            document.getElementById("main");
+            
+            document.getElementById("main") || document.getElementsByClassName("main")[0] ;
           var navElem = document.getElementById("o-head");
 
           mainElem.style.transition = "opacity .3s";

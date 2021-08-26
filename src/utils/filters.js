@@ -17,7 +17,6 @@ export const dateFilter = (d) => {
     d = Number(d);
     const date = new Date(d);
     let days=parseInt((new Date().getTime()-date.getTime())/86400000)
-    console.log(new Date().getTime(),date.getTime())
     if(days<=30){
         return days==0?'今天':days+'天前' 
     }else{

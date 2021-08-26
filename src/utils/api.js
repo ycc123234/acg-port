@@ -42,6 +42,24 @@ api.getNoticeContent=function (id){
     })
 }
 
+// 获取QQ头像接口：
+api.ssss=function (qq_number){
+    return new Promise((resolve,reject)=>{
+        resolve(`http://q1.qlogo.cn/g?b=qq&nk=${qq_number}&s=100&t=1547904810`)
+    })
+}
 
-
+//  获取QQ昵称接口：
+api.getqqMessage=function (qq_number){
+    return new Promise((resolve,reject)=>{
+        let url='/util/qq/message';
+        this.$axios.get(url,{params:{qq:qq_number}}).then((result)=>{
+            if(result.status==200){
+                resolve(result.data)
+            }else{
+                reject(result)
+            }
+        })
+    })
+}
 module.exports = api;
