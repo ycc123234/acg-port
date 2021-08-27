@@ -35,5 +35,12 @@ export function randomNickname({adj=[], title=[], firstName=[], lastName=[], num
 	let fullName = zq.randomNickname(adj, title, firstName, lastName, numberLength);
 	console.log('fullName', fullName)
 	return fullName;
-
+}
+//获取浏览器版本
+export function getBrowse(){
+	return zq.getBrowse();
+}
+//获取操作系统版本
+export function getOS(){
+	return zq.getOS();
 }
